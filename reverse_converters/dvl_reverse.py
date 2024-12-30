@@ -44,7 +44,7 @@ class DVLReverse(Node):
         publish_msg.position = position_vector
 
         orientation_q = msg.pose.pose.orientation
-        orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
+        orientation_list = [-orientation_q.x, orientation_q.y, orientation_q.z, -orientation_q.w]
         (roll, pitch, yaw) = tf_transformations.euler_from_quaternion(orientation_list, axes='rzyx')
 
         publish_msg.roll = roll
