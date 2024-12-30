@@ -3,7 +3,7 @@ import tf_transformations
 from rclpy.node import Node
 
 from std_msgs.msg import String
-from geometry_msgs.msg import TwistWithCovarianceStamped
+from geometry_msgs.msg import TwistWithCovarianceStamped, Vector3
 from nav_msgs.msg import Odometry
 from dvl_msgs.msg import DVL, DVLDR
 
@@ -36,6 +36,12 @@ class DVLReverse(Node):
         # Convert quaternion to Euler angles (is this correct?)
         # order of the angles is z,y,x
         # uses r the intrinsic rotation 
+        position_vector = Vector3()
+        position_vector.x = msg.pose.pose.position.x
+        position_vector.y = msg.pose.pose.position.y
+        position_vector.z = msg.pose.pose.position.z
+        publish_msg.position = position_vector
+
         orientation_q = msg.pose.pose.orientation
         orientation_list = [orientation_q.x, orientation_q.y, orientation_q.z, orientation_q.w]
         (roll, pitch, yaw) = tf_transformations.euler_from_quaternion(orientation_list, axes='rzyx')
@@ -45,6 +51,7 @@ class DVLReverse(Node):
         publish_msg.yaw = yaw
 
         self.DVLDR_publisher_.publish(publish_msg)
+
         self.get_logger().info('Position: "%s"' % str(publish_msg))
         self.get_logger().info('Roll: "%s"' % publish_msg.roll)
         self.get_logger().info('Pitch: "%s"' % publish_msg.pitch)
@@ -56,7 +63,7 @@ class DVLReverse(Node):
         # msg = TwistWithCovarianceStamped()
         publish_msg = DVL()
 
-        publish_msg.velocity = msg.twist.twist
+        publish_msg.velocity = msg.twist.twist.linear
         publish_msg.altitude = msg.twist.twist.linear.z
         # DVL needed variables: float64 altitude,geometry_msgs/Vector3 velocity
 
