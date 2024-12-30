@@ -29,8 +29,9 @@ class DVLReverse(Node):
  
     def DR_callback(self, msg):
         publish_msg = DVLDR()
+        publish_msg.header = msg.header
         # msg = Odometry()
-        publish_msg.position = msg.pose.pose.position
+        # publish_msg.position = msg.pose.pose.position
         # publish_msg.pos_std = msg.   //TODO: figure out where to get this data from
         
         # Convert quaternion to Euler angles (is this correct?)
@@ -62,6 +63,7 @@ class DVLReverse(Node):
     def Vel_callback(self, msg):
         # msg = TwistWithCovarianceStamped()
         publish_msg = DVL()
+        publish_msg.header = msg.header
 
         publish_msg.velocity = msg.twist.twist.linear
         publish_msg.altitude = msg.twist.twist.linear.z
@@ -71,7 +73,7 @@ class DVLReverse(Node):
         self.get_logger().info('Velocity: "%s"' % publish_msg.velocity)
         self.get_logger().info('Altitude: "%s"' % publish_msg.altitude)
 
-
+ 
 def main(args=None):
     rclpy.init(args=args)
 

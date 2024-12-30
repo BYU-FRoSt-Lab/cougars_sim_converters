@@ -1,3 +1,23 @@
 {
-    "ros.distro": "humble"
+    "ros.distro": "humble",
+    "python.autoComplete.extraPaths": [
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/seatrac_interfaces/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/gps_msgs/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/reverse_converters/lib/python3.10/site-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/gps_tools/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/frost_interfaces/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/dvl_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/seatrac_interfaces/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/gps_msgs/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/reverse_converters/lib/python3.10/site-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/gps_tools/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/frost_interfaces/local/lib/python3.10/dist-packages",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/dvl_msgs/local/lib/python3.10/dist-packages",
+        "/opt/ros/humble/lib/python3.10/site-packages",
+        "/opt/ros/humble/local/lib/python3.10/dist-packages"
+    ]
 }

@@ -1,0 +1,27 @@
+{
+  "configurations": [
+    {
+      "browse": {
+        "databaseFilename": "${default}",
+        "limitSymbolsToIncludedHeaders": false
+      },
+      "includePath": [
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/seatrac_interfaces/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/gps_msgs/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/frost_interfaces/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/install/dvl_msgs/include/**",
+        "/opt/ros/humble/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/src/cougars_coms/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/src/dvl-a50/include/**",
+        "/home/bja1701/Code/CoUGARs/cougars-ros2/src/gps_tools/include/**",
+        "/usr/include/**"
+      ],
+      "name": "ROS",
+      "intelliSenseMode": "gcc-x64",
+      "compilerPath": "/usr/bin/gcc",
+      "cStandard": "gnu11",
+      "cppStandard": "c++14"
+    }
+  ],
+  "version": 4
+}
