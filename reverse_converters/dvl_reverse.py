@@ -3,7 +3,7 @@ import tf_transformations
 from rclpy.node import Node
 
 from std_msgs.msg import String
-from geometry_msgs.msg import TwistWithCovarianceStamped, Vector3
+from geometry_msgs.msg import TwistWithCovarianceStamped, Vector3, PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from dvl_msgs.msg import DVL, DVLDR
 
@@ -13,7 +13,7 @@ class DVLReverse(Node):
     def __init__(self):
         super().__init__('reverse_dvl')
         self.DVL_publisher_ = self.create_publisher(DVL, 'dvl/data', 10)
-        self.DVLDR_publisher_ = self.create_publisher(DVLDR, 'dvl/pos', 10)
+        self.DVLDR_publisher_ = self.create_publisher(DVLDR, 'dvl/position', 10)
         timer_period = 0.5  # seconds
         self.DVLVelocity_subscription = self.create_subscription(
             TwistWithCovarianceStamped,
@@ -21,7 +21,7 @@ class DVLReverse(Node):
             self.Vel_callback,
             10)
         self.DVLdead_reckon_subscription = self.create_subscription(
-            Odometry,
+            PoseWithCovarianceStamped,
             '/holoocean/dead_reckon',
             self.DR_callback,
             10)

@@ -58,7 +58,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         depth,
-        # dvl,
+        dvl,
         gps,
         holoocean,
     ])
