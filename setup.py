@@ -27,6 +27,7 @@ setup(
             'dvl_reverse = reverse_converters.dvl_reverse:main',
             'depth_reverse = reverse_converters.depth_reverse:main',
             'gps_reverse = reverse_converters.gps_reverse:main',
+            'moos_reverse = reverse_converters.moos_reverse:main',
         ],
     },
 )

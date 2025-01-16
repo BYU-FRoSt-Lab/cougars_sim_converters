@@ -1,0 +1,53 @@
+running egg_info
+creating build/reverse_converters/reverse_converters.egg-info
+writing build/reverse_converters/reverse_converters.egg-info/PKG-INFO
+writing dependency_links to build/reverse_converters/reverse_converters.egg-info/dependency_links.txt
+writing entry points to build/reverse_converters/reverse_converters.egg-info/entry_points.txt
+writing requirements to build/reverse_converters/reverse_converters.egg-info/requires.txt
+writing top-level names to build/reverse_converters/reverse_converters.egg-info/top_level.txt
+writing manifest file 'build/reverse_converters/reverse_converters.egg-info/SOURCES.txt'
+reading manifest file 'build/reverse_converters/reverse_converters.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file 'build/reverse_converters/reverse_converters.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+copying reverse_converters/depth_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+copying reverse_converters/gps_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+copying reverse_converters/__init__.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+copying reverse_converters/modem_status_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+copying reverse_converters/dvl_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters
+running install
+running install_lib
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+copying /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters/depth_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+copying /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters/gps_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+copying /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters/__init__.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+copying /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters/modem_status_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+copying /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/build/lib/reverse_converters/dvl_reverse.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters
+byte-compiling /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters/depth_reverse.py to depth_reverse.cpython-310.pyc
+byte-compiling /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters/gps_reverse.py to gps_reverse.cpython-310.pyc
+byte-compiling /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters/modem_status_reverse.py to modem_status_reverse.cpython-310.pyc
+byte-compiling /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters/dvl_reverse.py to dvl_reverse.cpython-310.pyc
+running install_data
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/ament_index
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/ament_index/resource_index
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/ament_index/resource_index/packages
+copying resource/reverse_converters -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/ament_index/resource_index/packages
+copying package.xml -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters/launch
+copying launch/reverse_launch.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters/launch
+copying launch/full_launch.py -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters/launch
+creating /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters/config
+copying config/config.yaml -> /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/share/reverse_converters/config
+running install_egg_info
+Copying build/reverse_converters/reverse_converters.egg-info to /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/python3.10/site-packages/reverse_converters-0.0.0-py3.10.egg-info
+running install_scripts
+Installing depth_reverse script to /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/reverse_converters
+Installing dvl_reverse script to /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/reverse_converters
+Installing gps_reverse script to /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/reverse_converters
+Installing modem_status_reverse script to /home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/install/reverse_converters/lib/reverse_converters
+writing list of installed files to '/home/mmcmurray/drew_stuff/CoUGARs/cougars_sim_converters/build/reverse_converters/install.log'

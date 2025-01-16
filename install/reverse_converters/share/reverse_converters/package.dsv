@@ -1,0 +1,6 @@
+source;share/reverse_converters/hook/pythonpath.ps1
+source;share/reverse_converters/hook/pythonpath.dsv
+source;share/reverse_converters/hook/pythonpath.sh
+source;share/reverse_converters/hook/ament_prefix_path.ps1
+source;share/reverse_converters/hook/ament_prefix_path.dsv
+source;share/reverse_converters/hook/ament_prefix_path.sh
