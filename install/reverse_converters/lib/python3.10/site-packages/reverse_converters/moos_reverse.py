@@ -33,7 +33,17 @@ class MOOSReverse(Node):
 
 
         # process of converting into ModemStatus msg
-        modem_status_heading = (10 * -msg.vector.z) # just negate to put it into modem imu frame, also ModemStatus yaw is scaled down by 10
+
+        if msg.vector.z < 0.0:
+            nav_heading = 360.0 + msg.vector.z
+        else:
+            nav_heading = msg.vector.z
+
+        nav_heading = 360 - nav_heading
+
+        # at this point, this is what MOOS wants, but we now change this to look like a modem_status message
+        # since it is always positive, in the moos bridge it will always go to the second case.
+        modem_status_heading = nav_heading * 10
         converted_heading_msg.attitude_yaw = int(modem_status_heading)
         print(converted_heading_msg.attitude_yaw )
         self.ModemStatus_publisher.publish(converted_heading_msg)

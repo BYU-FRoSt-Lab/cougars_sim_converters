@@ -1,0 +1,11 @@
+/**:
+  ros__parameters:
+    origin.latitude: 40.246562
+    origin.longitude: -111.647649
+    origin.altitude: 1486.0
+
+    water_salinity_ppt: 0.0
+    fluid_pressure_atm: 87250.0
+
+# depth_reverse:
+#   ros__parameters:
