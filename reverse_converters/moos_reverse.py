@@ -1,10 +1,7 @@
 import rclpy
 from rclpy.node import Node
-
-from std_msgs.msg import String
-from geometry_msgs.msg import TwistWithCovarianceStamped, Vector3, PoseWithCovarianceStamped, Vector3Stamped
+from geometry_msgs.msg import Vector3Stamped
 from nav_msgs.msg import Odometry
-from dvl_msgs.msg import DVL, DVLDR
 from seatrac_interfaces.msg import ModemStatus
 
 # this node basically allows us to just have a single moos_bridge node so whether we are running in sim or not we can just launch the moos_bridge.cpp
