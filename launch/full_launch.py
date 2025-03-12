@@ -55,12 +55,21 @@ def generate_launch_description():
         output='screen',
         parameters=[params_file]  
     )
+    moos_reverse = launch_ros.actions.Node(
+        name='moos_reverse',
+        package='reverse_converters',
+        executable='moos_reverse',  
+        namespace=vehicle_namespace,
+        output='screen',
+        parameters=[params_file]  
+    )
 
     return LaunchDescription([
         depth,
         dvl,
         gps,
         holoocean,
+        moos_reverse
     ])
 
 
