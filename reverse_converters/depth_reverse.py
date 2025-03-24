@@ -39,7 +39,7 @@ class PressureConverter(Node):
         # Convert depth to pressure
         depth = depth_msg.pose.pose.position.z
         pressure = (fluid_pressure_atm - 
-                    (depth * (FLUID_DENSITY_BASE + water_salinity_ppt) * GRAVITY)) / 100.0
+                    (depth * (FLUID_DENSITY_BASE + water_salinity_ppt) * GRAVITY))
 
         pressure_msg.fluid_pressure = pressure
         self.pressure_publisher.publish(pressure_msg)

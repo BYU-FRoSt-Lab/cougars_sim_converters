@@ -6,6 +6,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import TwistWithCovarianceStamped, Vector3, PoseWithCovarianceStamped
 from nav_msgs.msg import Odometry
 from dvl_msgs.msg import DVL, DVLDR
+from holoocean_interfaces.msg import DVLSensorRange
 
 
 class DVLReverse(Node):
@@ -25,6 +26,14 @@ class DVLReverse(Node):
             '/holoocean/dead_reckon',
             self.DR_callback,
             10)
+        
+        self.dvl_range_sub = self.create_subscription(
+            DVLSensorRange,
+            '/holoocean/DVLSensorRange',
+            self.altitude_callback,
+            10)
+        
+        self.altitude = 0.0
         
  
     def DR_callback(self, msg):
@@ -59,14 +68,19 @@ class DVLReverse(Node):
         # self.get_logger().info('Yaw: "%s"' % publish_msg.yaw)
 
 
-
+    def altitude_callback(self, msg: DVLSensorRange):
+        self.altitude = float(sum(msg.range) / len(msg.range))
+    
+    
     def Vel_callback(self, msg):
         # msg = TwistWithCovarianceStamped()
         publish_msg = DVL()
         publish_msg.header = msg.header
 
         publish_msg.velocity = msg.twist.twist.linear
-        publish_msg.altitude = msg.twist.twist.linear.z
+
+
+        publish_msg.altitude = self.altitude
         # DVL needed variables: float64 altitude,geometry_msgs/Vector3 velocity
 
         self.DVL_publisher_.publish(publish_msg)
