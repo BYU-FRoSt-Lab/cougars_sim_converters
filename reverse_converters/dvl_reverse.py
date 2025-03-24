@@ -53,10 +53,10 @@ class DVLReverse(Node):
 
         self.DVLDR_publisher_.publish(publish_msg)
 
-        self.get_logger().info('Position: "%s"' % str(publish_msg))
-        self.get_logger().info('Roll: "%s"' % publish_msg.roll)
-        self.get_logger().info('Pitch: "%s"' % publish_msg.pitch)
-        self.get_logger().info('Yaw: "%s"' % publish_msg.yaw)
+        # self.get_logger().info('Position: "%s"' % str(publish_msg))
+        # self.get_logger().info('Roll: "%s"' % publish_msg.roll)
+        # self.get_logger().info('Pitch: "%s"' % publish_msg.pitch)
+        # self.get_logger().info('Yaw: "%s"' % publish_msg.yaw)
 
 
 
@@ -70,8 +70,8 @@ class DVLReverse(Node):
         # DVL needed variables: float64 altitude,geometry_msgs/Vector3 velocity
 
         self.DVL_publisher_.publish(publish_msg)
-        self.get_logger().info('Velocity: "%s"' % publish_msg.velocity)
-        self.get_logger().info('Altitude: "%s"' % publish_msg.altitude)
+        # self.get_logger().info('Velocity: "%s"' % publish_msg.velocity)
+        # self.get_logger().info('Altitude: "%s"' % publish_msg.altitude)
 
  
 def main(args=None):
