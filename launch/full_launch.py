@@ -56,11 +56,21 @@ def generate_launch_description():
         parameters=[params_file]  
     )
 
+    imu = launch_ros.actions.Node(
+        name='imu_reverse',
+        package='reverse_converters',
+        executable='imu_reverse',  
+        namespace=vehicle_namespace,
+        output='screen',
+        parameters=[params_file]  
+    )
+
     return LaunchDescription([
         depth,
         dvl,
         gps,
         holoocean,
+        imu,
     ])
 
 
