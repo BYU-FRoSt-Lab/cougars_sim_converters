@@ -10,22 +10,28 @@ class ImuCombiner(Node):
         # Initialize latest message storage
         self.dynamics_msg = None
         self.imu_msg = None
+
+        self.declare_parameter('holoocean_vehicle', 'auv0')
+        holoocean_vehicle = self.get_parameter('holoocean_vehicle').get_parameter_value().string_value
+
+        self.declare_parameter('frost_vehicle', 'coug1')
+        frost_vehicle = self.get_parameter('frost_vehicle').get_parameter_value().string_value
         
         # Create subscribers
         self.dynamics_sub = self.create_subscription(
             Imu,
-            '/holoocean/DynamicsSensorIMU',
+            '/holoocean/' + holoocean_vehicle + '/DynamicsSensorIMU',
             self.dynamics_callback,
             10)
             
         self.imu_sub = self.create_subscription(
             Imu,
-            '/holoocean/IMUSensor',
+            '/holoocean/' + holoocean_vehicle + '/IMUSensor',
             self.imu_callback,
             10)
             
         # Create publisher
-        self.publisher = self.create_publisher(Imu, 'modem_imu', 10)
+        self.publisher = self.create_publisher(Imu, frost_vehicle + '/modem_imu', 10)
         
         # Create timer to check and publish combined data at 10Hz
         self.timer = self.create_timer(0.1, self.timer_callback)

@@ -17,14 +17,12 @@ def generate_launch_description():
 
     # List contents of the directory to debug
     
-    vehicle_namespace = 'coug1'
-
     holoocean = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([
             os.path.join(
                 get_package_share_directory('holoocean_main'),
                 'launch',
-                'holoocean_hardware_launch.py'
+                'holoocean_launch.py'
             )
         ])
     )
@@ -33,7 +31,6 @@ def generate_launch_description():
         name='depth_reverse',
         package='reverse_converters',
         executable='depth_reverse',  
-        namespace=vehicle_namespace,
         output='screen',
         parameters=[params_file]  
     )
@@ -42,7 +39,6 @@ def generate_launch_description():
         name='gps_reverse',
         package='reverse_converters',
         executable='gps_reverse',  
-        namespace=vehicle_namespace,
         output='screen',
         parameters=[params_file]  
     )
@@ -51,7 +47,6 @@ def generate_launch_description():
         name='dvl_reverse',
         package='reverse_converters',
         executable='dvl_reverse',  
-        namespace=vehicle_namespace,
         output='screen',
         parameters=[params_file]  
     )
@@ -60,7 +55,14 @@ def generate_launch_description():
         name='imu_reverse',
         package='reverse_converters',
         executable='imu_reverse',  
-        namespace=vehicle_namespace,
+        output='screen',
+        parameters=[params_file]  
+    )
+
+    ucommand = launch_ros.actions.Node(
+        name='ucommand_bridge',
+        package='reverse_converters',
+        executable='ucommand_bridge',  
         output='screen',
         parameters=[params_file]  
     )
@@ -71,6 +73,7 @@ def generate_launch_description():
         gps,
         holoocean,
         imu,
+        ucommand,
     ])
 
 

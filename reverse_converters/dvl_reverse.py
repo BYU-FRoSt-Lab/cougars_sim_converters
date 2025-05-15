@@ -13,14 +13,24 @@ class DVLReverse(Node):
 
     def __init__(self):
         super().__init__('reverse_dvl')
-        self.DVL_publisher_ = self.create_publisher(DVL, 'dvl/data', 10)
-        self.DVLDR_publisher_ = self.create_publisher(DVLDR, 'dvl/position', 10)
+
+        self.declare_parameter('holoocean_vehicle', 'auv0')
+        holoocean_vehicle = self.get_parameter('holoocean_vehicle').get_parameter_value().string_value
+
+        self.declare_parameter('frost_vehicle', 'coug1')
+        frost_vehicle = self.get_parameter('frost_vehicle').get_parameter_value().string_value
+
+        self.DVL_publisher_ = self.create_publisher(DVL, frost_vehicle + '/dvl/data', 10)
+        self.DVLDR_publisher_ = self.create_publisher(DVLDR, frost_vehicle + '/dvl/position', 10)
+
         timer_period = 0.5  # seconds
         self.DVLVelocity_subscription = self.create_subscription(
             TwistWithCovarianceStamped,
-            '/holoocean/DVLSensorVelocity',
+            '/holoocean/' + holoocean_vehicle + '/DVLSensorVelocity',
             self.Vel_callback,
             10)
+        
+        # TODO fix this
         self.DVLdead_reckon_subscription = self.create_subscription(
             PoseWithCovarianceStamped,
             '/holoocean/dead_reckon',
@@ -29,7 +39,7 @@ class DVLReverse(Node):
         
         self.dvl_range_sub = self.create_subscription(
             DVLSensorRange,
-            '/holoocean/DVLSensorRange',
+            '/holoocean/' + holoocean_vehicle + '/DVLSensorRange',
             self.altitude_callback,
             10)
         

@@ -28,6 +28,7 @@ setup(
             'depth_reverse = reverse_converters.depth_reverse:main',
             'gps_reverse = reverse_converters.gps_reverse:main',
             'imu_reverse = reverse_converters.imu_reverse:main',
+            'ucommand_bridge = reverse_converters.ucommand_bridge:main',
         ],
     },
 )

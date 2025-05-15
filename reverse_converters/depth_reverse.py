@@ -13,18 +13,23 @@ class PressureConverter(Node):
         # Declare parameters
         self.declare_parameter('water_salinity_ppt', 0.0)
         self.declare_parameter('fluid_pressure_atm', 87250.0)
+        self.declare_parameter('holoocean_vehicle', 'auv0')
+        self.declare_parameter('frost_vehicle', 'coug1')
+
+        frost_vehicle = self.get_parameter('frost_vehicle').get_parameter_value().string_value
+        holoocean_vehicle = self.get_parameter('holoocean_vehicle').get_parameter_value().string_value
 
         # Create publisher
         self.pressure_publisher = self.create_publisher(
             FluidPressure,
-            'pressure/data',
+            frost_vehicle + '/pressure/data',
             10
         )
 
         # Create subscription
         self.depth_subscription = self.create_subscription(
             PoseWithCovarianceStamped,
-            '/holoocean/DepthSensor',
+            '/holoocean/' + holoocean_vehicle + '/DepthSensor',
             self.depth_callback,
             10
         )

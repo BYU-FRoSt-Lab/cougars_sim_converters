@@ -31,11 +31,16 @@ class OdomToNavSatFix(Node):
         self.declare_parameter('origin.latitude', 34.0219)
         self.declare_parameter('origin.longitude', -118.4814)
         self.declare_parameter('origin.altitude', 0.0)
+        self.declare_parameter('holoocean_vehicle', 'auv0')
+        holoocean_vehicle = self.get_parameter('holoocean_vehicle').get_parameter_value().string_value
+
+        self.declare_parameter('frost_vehicle', 'coug1')
+        frost_vehicle = self.get_parameter('frost_vehicle').get_parameter_value().string_value
         
         # Subscribe to Odometry
         self.subscriber = self.create_subscription(
             Odometry,
-            '/holoocean/GPSSensor',
+            '/holoocean/' + holoocean_vehicle + '/GPSSensor',
             self.odom_callback,
             10
         )
@@ -43,7 +48,7 @@ class OdomToNavSatFix(Node):
         self.last_msg = None
 
         # Publisher for GPSFix
-        self.publisher = self.create_publisher(GPSFix, 'extended_fix', 10)
+        self.publisher = self.create_publisher(GPSFix, frost_vehicle + '/extended_fix', 10)
     
     def odom_callback(self, msg: Odometry):
         '''
