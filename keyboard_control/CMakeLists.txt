@@ -24,9 +24,6 @@ ament_target_dependencies(couguv_teleop_key rclcpp holoocean_interfaces)
 install(TARGETS couguv_teleop_key 
   DESTINATION lib/${PROJECT_NAME})
 
-install(DIRECTORY launch/
-    DESTINATION share/${PROJECT_NAME}/launch
-)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
